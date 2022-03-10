@@ -2,7 +2,6 @@ import axios from "axios";
 
 axios.get("https://randomuser.me/api/?results=5")
   .then(res => {
-    console.log(res.data.results);
     res.data.results.forEach(user => {
       const userObj = {
         username: user.login.username,
@@ -15,28 +14,6 @@ axios.get("https://randomuser.me/api/?results=5")
       document.querySelector(".entry").appendChild(userCard);
     })
   }).catch(err => console.error);
-  // { 
-  //   username: "CRHarding", 
-  //   email: "case@case.com", 
-  //   age: 74, 
-  //   gender: "god", 
-  //   imgSrc: "https://downloadwallpaper.org/wp-content/uploads/2016/05/thor-wallpaper3.jpg" 
-  // }
-  /**
-   * 
-   * 
-   * <div class="entry"> 
-   *  <div>
-    *   <h3>Username</h3>
-        <p>Email</p>
-        <p>Age + Gender</p>
-        <img 
-          src="https://downloadwallpaper.org/wp-content/uploads/2016/05/thor-wallpaper3.jpg" 
-          alt="THOR" 
-        />
-        </div>
-    </div>
-   */
 
 function makeUser(user) {
   // Step one: Create the Markup, sir!
